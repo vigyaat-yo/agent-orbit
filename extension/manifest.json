@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Agent Orbit — Privacy Browser Agent",
+  "version": "0.1.0",
+  "description": "Local PII redaction and safe browser actions for the SIH MVP.",
+  "permissions": ["activeTab", "storage", "tabs"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*", "file:///*"],
+  "background": { "service_worker": "src/background/service-worker.js", "type": "module" },
+  "content_scripts": [{
+    "matches": ["<all_urls>", "file:///*"],
+    "js": ["content.bundle.js"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_popup": "src/popup/popup.html", "default_title": "Privacy Agent" }
+}
