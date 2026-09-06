@@ -1,0 +1,23 @@
+-------BACKEND START
+
+cd server
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt    ------first time
+.\.venv\Scripts\python.exe -m uvicorn main:app --reload --port 8000
+
+
+
+-------EXTENSION START
+
+cd extension
+npm install    ------------first time
+npm run build
+
+
+------TROUBLESHOOT
+
+deactivate
+
+Test-Path .\.venv\Scripts\python.exe  ---false
+py install 3.13
+py -3.13 -m venv .venv
+Test-Path .\.venv\Scripts\python.exe  ---true
